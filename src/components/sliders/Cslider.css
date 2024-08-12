@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  
+  body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  /* Container styles */
+  .container {
+    max-width: 80vw;
+    padding: 10px 10px 0 10px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  /* Heading styles */
+  .heading {
+    padding: 10px 0;
+    font-size: 35px;
+    text-align: center;
+  }
+  
+  /* Swiper container styles */
+  .swiper_container {
+    height: 520px;
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Swiper slide styles */
+  .swiper-slide {
+    width: 370px;
+    height: 420px;
+    position: relative;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  /* Hide slide shadows */
+  .swiper-slide-shadow-left,
+  .swiper-slide-shadow-right {
+    display: none;
+  }
+  
+  /* Slider controller styles */
+  .slider-controler {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  
+ 
+
+  
+  .slider-controler .slider-arrow::after {
+    content: '';
+  }
+  
+  /* Swiper pagination styles */
+  .swiper-pagination {
+    position: relative;
+    width: 150px !important;
+    bottom: 10px;
+  }
+  
+  .swiper-pagination .swiper-pagination-bullet {
+    filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+  }
+  
+  .swiper-pagination .swiper-pagination-bullet-active {
+    background: var(--primary); /* Ensure you have this CSS variable set */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 990px) {
+    .swiper_container {
+      height: 470px;
+    }
+  
+    .swiper-slide {
+      width: 280px !important;
+      height: 360px !important;
+    }
+  
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+    }
+  
+    
+  }
+  
+  @media (max-width: 500px) {
+    .swiper_container {
+      height: 470px;
+    }
+  
+    .swiper-slide {
+      width: 280px !important;
+      height: 360px !important;
+    }
+  
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+    }
+  
+  }
+  
