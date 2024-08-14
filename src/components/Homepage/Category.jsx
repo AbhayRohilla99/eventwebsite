@@ -35,7 +35,7 @@ const categories = [
   },
 ];
 
-function Categories() {
+function Category() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -78,4 +78,4 @@ function Categories() {
   );
 }
 
-export default Categories;
+export default Category;

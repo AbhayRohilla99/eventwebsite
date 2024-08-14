@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import 'swiper/css/bundle';
+import { NavLink } from "react-router-dom";
 // import {Pagination } from 'swiper';
 
 const Slickslider = () => {
@@ -51,9 +52,12 @@ const Slickslider = () => {
                 <h2 className="text-white text-sm md:text-lg lg:text-xl text-center font-bold mb-2 md:mb-4">
                   {image.text}
                 </h2>
+                <NavLink 
+                to = "/Venucard" >
                 <button className="text-white bg-black hover:bg-gray-800 py-1 md:py-2 px-2 md:px-4 rounded-lg font-medium transition duration-150">
                   Book Now
                 </button>
+                </NavLink>
               </div>
             </div>
           </SwiperSlide>
