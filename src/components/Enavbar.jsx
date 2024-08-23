@@ -1,9 +1,9 @@
 import React, { useEffect, useState, Fragment } from "react";
+import { NavLink } from "react-router-dom";
 import {
   Navbar as MTNavbar,
   MobileNav,
   Typography,
-  Button,
   Menu,
   MenuHandler,
   MenuList,
@@ -22,27 +22,30 @@ import {
 // nav list menu
 const navListMenuItems = [
   {
-    title: "roorkee",
+    title: "Roorkee",
     description:
-      "a very good place to visit and enjoy the beauty of nature and the culture of the city.",
+      "A very good place to visit and enjoy the beauty of nature and the culture of the city.",
+    link: "/roorkee",
   },
   {
-    title: "haridwar",
+    title: "Haridwar",
     description:
-      "a historical place where you can enjoy the beauty of the river ganga and the culture of the city.",
+      "A historical place where you can enjoy the beauty of the river Ganga and the culture of the city.",
+    link: "/haridwar",
   },
   {
-    title: "dehradun",
+    title: "Dehradun",
     description:
-      "a very good place to visit and enjoy the beauty of nature and the culture of the city.",
+      "A very good place to visit and enjoy the beauty of nature and the culture of the city.",
+    link: "/dehradun",
   },
 ];
 
 function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const renderItems = navListMenuItems.map(({ title, description }) => (
-    <a href="#" key={title}>
+  const renderItems = navListMenuItems.map(({ title, description, link }) => (
+    <NavLink to={link} key={title}>
       <MenuItem className="hover:bg-black">
         <Typography variant="h6" color="white" className="mb-1">
           {title}
@@ -51,14 +54,14 @@ function NavListMenu() {
           {description}
         </Typography>
       </MenuItem>
-    </a>
+    </NavLink>
   ));
 
   return (
     <Fragment>
       <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
         <MenuHandler>
-          <Typography as="a" href="#" variant="small" className="font-normal">
+          <NavLink to="#" className="font-normal">
             <MenuItem className="hidden items-center gap-2 font-medium text-white text-lg lg:flex lg:rounded-full">
               <Square3Stack3DIcon className="h-[18px] w-[18px] text-white text-2xl" />{" "}
               Venues{" "}
@@ -69,7 +72,7 @@ function NavListMenu() {
                 }`}
               />
             </MenuItem>
-          </Typography>
+          </NavLink>
         </MenuHandler>
         <MenuList className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid bg-black">
           <ul className="col-span-4 flex w-full flex-col gap-1">
@@ -91,42 +94,42 @@ function NavListMenu() {
 // nav list component
 const navListItems = [
   {
+    label: "Home",
+    icon: UserCircleIcon,
+    link: "/",
+  },
+  {
     label: "Photos",
     icon: UserCircleIcon,
+    link: "#",
   },
   {
     label: "Real Weddings",
     icon: CubeTransparentIcon,
+    link: "#",
   },
   {
     label: "Shop",
     icon: CodeBracketSquareIcon,
+    link: "#",
   },
 ];
 
 function NavList() {
   return (
-    <ul className="mt-16 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center ">
+    <ul className="mt-16 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
       <NavListMenu />
-      {navListItems.map(({ label, icon }, key) => (
-        <Typography
-          key={label}
-          as="a"
-          href="#"
-          variant="large"
-          color="white"
-          className="font-medium text-white"
-        >
+      {navListItems.map(({ label, icon, link }) => (
+        <NavLink key={label} to={link} className="font-medium text-white">
           <MenuItem className="flex items-center gap-2 lg:rounded-full navli">
             {React.createElement(icon, {
               className: "h-[18px] w-[18px] .list_items",
             })}{" "}
             <span className="text-white text-[18px] list_items">
-              {" "}
               {label}
             </span>
           </MenuItem>
-        </Typography>
+        </NavLink>
       ))}
     </ul>
   );
@@ -154,13 +157,9 @@ export default function Enavbar() {
   return (
     <MTNavbar className="mx-auto navbar p-4 lg:px-6 rounded-none bg-[#FB2988]">
       <div className="relative mx-auto flex items-center justify-between text-white">
-        <Typography
-          as="a"
-          href="#"
-          className="mr-4 ml-2 cursor-pointer py-1.5 font-semibold text-2xl"
-        >
+        <NavLink to="#" className="mr-4 ml-2 cursor-pointer py-1.5 font-semibold text-2xl">
           Event Planner
-        </Typography>
+        </NavLink>
         <div className="hidden lg:block">
           <NavList />
         </div>
