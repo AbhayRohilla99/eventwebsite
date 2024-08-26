@@ -17,8 +17,8 @@ function Cslider() {
         centeredSlides={true}
         loop={true}
         autoplay={{
-          delay: 2000,
-          pauseOnMouseEnter: true,
+        delay: 2000,
+        pauseOnMouseEnter: true,
         }}
         slidesPerView={'auto'}
         coverflowEffect={{
